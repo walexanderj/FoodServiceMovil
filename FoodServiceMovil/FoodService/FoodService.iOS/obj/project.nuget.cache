@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZP5WKF1G+yfRN7zcqd/F7IK9K0kEHFfm3ZfNJhMNeMRsTMhKWSd+9KaGnD1MbBf1ew4yLlmeL+pS8ancuyDDzg==",
+  "success": true,
+  "projectFilePath": "D:\\Griffith\\Desarrollos\\FoodServiceMovil\\FoodServiceMovil\\FoodService\\FoodService.iOS\\FoodService.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wjaramillo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\wjaramillo\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\wjaramillo\\.nuget\\packages\\xamarin.forms\\4.6.0.800\\xamarin.forms.4.6.0.800.nupkg.sha512"
+  ],
+  "logs": []
+}

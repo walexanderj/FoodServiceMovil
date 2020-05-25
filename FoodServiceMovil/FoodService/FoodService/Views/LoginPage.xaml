@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodService.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="Chocolate" Grid.Row="0" />
+            <Grid BackgroundColor="Gray" Grid.Row="1" />
+
+            <!--Contenido, logo y formulario de ingreso-->
+            <Grid Grid.RowSpan="2" Margin="50,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <!--Logo-->
+                <StackLayout Grid.Row="0" 
+                         WidthRequest="150" 
+                         HeightRequest="150" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center">
+                    <BoxView BackgroundColor="Gray" 
+                         VerticalOptions="Fill"
+                         WidthRequest="150"
+                         CornerRadius="75"
+                         HeightRequest="150">
+                    </BoxView>
+                    <Image Grid.Column="0" 
+                       Source="FB_IMG_15381330065636778.jpg"
+                       HorizontalOptions="Center"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <!--Formulario de ingreso-->
+                <Grid Grid.Row="1" RowSpacing="0">
+                    <Frame HasShadow="True" CornerRadius="10">
+                        <StackLayout Spacing="20">
+                            <Label Text="LOGIN" HorizontalOptions="Center"/>
+                            <Entry x:Name="txt_email" Placeholder="Email" Keyboard="Email"/>
+                            <Entry x:Name="txt_password" Placeholder="Password" IsPassword="True"/>
+
+                            <Button x:Name="btn_login" 
+                                
+                                Text="LOGIN" BackgroundColor="Chocolate" 
+                                TextColor="Gray" 
+                                CornerRadius="20"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <Grid Grid.Row="2" />
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
