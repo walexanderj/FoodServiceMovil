@@ -12,3 +12,7 @@ D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodServic
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.csproj.CoreCompileInputs.cache
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\FoodServiceHomePage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\AreasPage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\AreaDetallePage.xaml.g.cs

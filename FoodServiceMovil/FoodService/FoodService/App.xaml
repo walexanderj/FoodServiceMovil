@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="FoodService.App">
     <Application.Resources>
-
+        <Color x:Key="gris_color_oscuro">#2d3436</Color>
+        <Color x:Key="gris_color_claro">#dfe6e9</Color>
     </Application.Resources>
 </Application>
