@@ -1,0 +1,79 @@
+﻿using FoodService.Interfeces;
+using FoodService.Models;
+using FoodService.Services;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace FoodService.ViewModels
+{
+    public class NovedadViewModel : BaseViewModel
+    {
+        public ICommand GuardarNovedadCommand { get; set; }
+        public ObservableCollection<EmpleadoModel> Empleados { get; set; }
+
+        public ObservableCollection<ConceptoModel> Conceptos { get; set; }
+        public string TipoNovedad { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFinal { get; set; }
+        public NovedadModel Novedad { get; set; }
+        private bool _IsRefreshing;
+
+        public bool IsRefreshing
+        {
+            get { return _IsRefreshing; }
+            set
+            {
+                _IsRefreshing = value;
+                OnPropertyChanged("IsRefreshing");
+            }
+        }
+        public NovedadViewModel(string tipoNovedad, List<EmpleadoModel> empleados)
+        {
+            GuardarNovedadCommand = new Command(GuardarNovedad);
+            Empleados = new ObservableCollection<EmpleadoModel>();
+            Conceptos = new ObservableCollection<ConceptoModel>();
+            TipoNovedad = tipoNovedad;
+            FechaInicio = DateTime.Now;
+            FechaFinal = DateTime.Now;
+            Novedad = new NovedadModel();
+            ListarEmpleados(empleados);
+            ListarConceptos();
+        }
+        private void GuardarNovedad()
+        {
+            DateTime f1 = FechaInicio;
+            DateTime f2 = FechaFinal;
+            while (f1 <= f2)
+            {
+
+                f1 = f1.Date.AddDays(1);
+            }
+            var navigationService = new NavigationService();
+            navigationService.NavigateToDashboard();
+        }
+
+        private void ListarConceptos()
+        {
+            Conceptos.Add(new ConceptoModel(3, "INCAPACIDADES X AT", "Novedad"));
+            Conceptos.Add(new ConceptoModel(7, "VACACIONES", "Novedad"));
+            Conceptos.Add(new ConceptoModel(11, "PERMISOS APROBADOS", "Novedad"));
+            Conceptos.Add(new ConceptoModel(12, "INCAPACIDADES X EG", "Novedad"));
+            Conceptos.Add(new ConceptoModel(16, "VIAJE", "Novedad"));
+            Conceptos.Add(new ConceptoModel(17, "REUNION / CAPACITACIÓN", "Novedad"));
+        }
+        private void ListarEmpleados(List<EmpleadoModel> lista)
+        {
+            IsRefreshing = true;
+            var empleados = new ObservableCollection<EmpleadoModel>(lista);
+            foreach (var itemEmpleado in empleados)
+            {
+                Empleados.Add(itemEmpleado);
+            }
+            IsRefreshing = false;
+        }
+    }
+}

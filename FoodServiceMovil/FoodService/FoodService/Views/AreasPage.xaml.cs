@@ -18,6 +18,13 @@ namespace FoodService.Views
         {
             InitializeComponent();
             BindingContext =new  AreasViewModel();
+            //ToolbarItem item = new ToolbarItem();
+            //item.Text = "Contact Us";
+            //item.Priority = 5;
+            //item.Order = ToolbarItemOrder.Secondary;
+            //item.Clicked += ContactUsClicked;
+
+            //this.ToolbarItems.Add(item);
         }
 
         async private void grd_Areas_ItemSelected(object sender, SelectedItemChangedEventArgs e)

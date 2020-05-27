@@ -5,6 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="FoodService.Views.AreasPage">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="About" Priority="0" Order="Primary" Clicked="AboutClicked"/>--><!--
+        <ToolbarItem IconImageSource="home" Priority="0" Order="Primary" />
+        <ToolbarItem Text="Ver Programación" Priority="1" Order="Secondary" />
+        <ToolbarItem Text="Ver Novedades" Priority="2" Order="Secondary"/>-->
+    </ContentPage.ToolbarItems>
     <Grid>
         <ListView x:Name="grd_Areas" 
                   IsRefreshing="{Binding IsRefreshing}"
@@ -21,9 +27,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <!--<Grid BackgroundColor="{StaticResource gris_color_claro}">-->
-                            <Frame HasShadow="False" Margin="1" BorderColor="LightGray" CornerRadius="10" >
-                                <!--<StackLayout Orientation="Horizontal">-->
+                        <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                            <Frame HasShadow="False" Margin="0" BorderColor="LightGray" CornerRadius="0" >
+                                <StackLayout Orientation="Horizontal">
 
                                     <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
 
@@ -33,9 +39,9 @@
                                         <Label Text="{Binding Telefono}" FontSize="Small"/>
                                         <Image Source="{Binding Calificacion,Converter={StaticResource CalificationToImage}}" />-->
                                     </StackLayout>
-                                <!--</StackLayout>-->
+                                </StackLayout>
                             </Frame>
-                        <!--</Grid>-->
+                        </Grid>
 
                     </ViewCell>
                 </DataTemplate>

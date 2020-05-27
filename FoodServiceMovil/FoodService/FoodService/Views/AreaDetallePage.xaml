@@ -4,7 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="FoodService"
              x:Class="FoodService.Views.AreaDetallePage">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="About" Priority="0" Order="Primary" Clicked="AboutClicked"/>-->
+
+        <ToolbarItem x:Name="mn_home" IconImageSource="home" Priority="0" Order="Primary" Clicked="Mn_home_Clicked" />
+        <ToolbarItem x:Name="mn_new_service" Text="Solicitar Servicio" Priority="1" Order="Secondary" Clicked="mn_new_service_Clicked"/>
+        <ToolbarItem  x:Name="mn_cancel_service" Text="Cancelar Servicio" Priority="2" Order="Secondary" Clicked="mn_cancel_service_Clicked"/>
+        <ToolbarItem  x:Name="mn_change_service" Text="Cambio de Turno" Priority="3" Order="Secondary" Clicked="mn_change_service_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,8 +25,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                Grid.Row="0"/>
-
-            <Grid Grid.Row="1" BackgroundColor="Black">
+            <Grid Grid.Row="1" BackgroundColor="White">
                 <ListView x:Name="grd_Empleados" 
                   IsRefreshing="{Binding IsRefreshing}"
                   ItemsSource="{Binding Empleados}" 
@@ -28,20 +36,20 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <!--<Grid BackgroundColor="{StaticResource gris_color_claro}">-->
-                                <Frame HasShadow="False" Margin="1" BorderColor="LightGray" CornerRadius="10" >
-                                    <!--<StackLayout Orientation="Horizontal">-->
+                                <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                                    <Frame HasShadow="true" Margin="0" BorderColor="LightGray" CornerRadius="0" >
+                                        <StackLayout Orientation="Horizontal">
 
-                                    <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
-
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="{Binding Nombre}" FontSize="Subtitle" />
-                                        <Label Text="{Binding TipoContrato}" FontSize="Micro" TextColor="Gray"/>
-                                        <Label Text="{Binding Telefono}" FontSize="Micro" TextColor="Gray"/>
-                                    </StackLayout>
-                                    <!--</StackLayout>-->
-                                </Frame>
-                                <!--</Grid>-->
+                                            <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
+                                            <CheckBox  IsChecked="{Binding IsChecked}"/>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Nombre}" FontSize="Subtitle" />
+                                                <Label Text="{Binding TipoContrato}" FontSize="Micro" TextColor="Gray"/>
+                                                <Label Text="{Binding Telefono}" FontSize="Micro" TextColor="Gray"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
 
                             </ViewCell>
                         </DataTemplate>

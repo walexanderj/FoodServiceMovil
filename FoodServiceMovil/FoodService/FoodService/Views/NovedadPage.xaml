@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodService.Views.NovedadPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Column="0" Margin="5">
+                <Label Text="Inicio"/>
+                <DatePicker Date="{Binding FechaInicio}" />
+                <Label Text="Finaliza"/>
+                <DatePicker Date="{Binding FechaFinal}" />
+                <Label Text="Concepto"/>
+                <Picker Title="Concepto" 
+                        ItemsSource="{Binding Conceptos}" 
+                        SelectedItem="{Binding Descripcion, Mode=TwoWay}"
+                        ItemDisplayBinding="{Binding Descripcion}"/>
+                <Label Text="Notas"/>
+                <Entry Text="{Binding Novedad.Notas}"/>
+                <Button x:Name="bt_Aceptar" Text="Guardar" Command="{Binding GuardarNovedadCommand}"/>
+            </StackLayout>
+           
+            <Grid Grid.Row="1" BackgroundColor="White">
+                <ListView x:Name="grd_Empleados" 
+                  IsRefreshing="{Binding IsRefreshing}"
+                  ItemsSource="{Binding Empleados}" 
+                  HasUnevenRows="True" 
+                  CachingStrategy="RetainElement" 
+                  SeparatorVisibility="None">
+                    <!--ItemSelected="grd_Areas_ItemSelected">-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                                    <Frame HasShadow="true" Margin="0" BorderColor="LightGray" CornerRadius="0" Padding="1">
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Nombre}" FontSize="Subtitle" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
