@@ -33,6 +33,7 @@ namespace FoodService.Repository
             return null;
         }
 
+
         async public Task<List<AreaModel>> GetAreas()
         {
             var deviceService = DependencyService.Get<IDeviceService>();
@@ -67,6 +68,24 @@ namespace FoodService.Repository
                 }
             }
             return null;
+        }
+        async public Task<bool> AddNovedad(NovedadModel item)
+        {
+            var deviceService = DependencyService.Get<IDeviceService>();
+            if (deviceService.CheckConnectivity())
+            {
+                using (var client = new HttpClient())
+                {
+                    var json = JsonConvert.SerializeObject(item);
+                    var contentSend = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync(new Uri(Url + "Novedad"), contentSend);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

@@ -19,8 +19,9 @@
                 <Label Text="Concepto"/>
                 <Picker Title="Concepto" 
                         ItemsSource="{Binding Conceptos}" 
-                        SelectedItem="{Binding Descripcion, Mode=TwoWay}"
+                        SelectedItem="{Binding SeletedConcepto, Mode=TwoWay}"
                         ItemDisplayBinding="{Binding Descripcion}"/>
+                <!--<Label Text="{Binding SelectedJob.JobsId}" IsVisible="True" x:Name="TxtId" Margin="0,100,0,0"/>-->
                 <Label Text="Notas"/>
                 <Entry Text="{Binding Novedad.Notas}"/>
                 <Button x:Name="bt_Aceptar" Text="Guardar" Command="{Binding GuardarNovedadCommand}"/>

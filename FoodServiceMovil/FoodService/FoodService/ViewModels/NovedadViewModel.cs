@@ -1,5 +1,6 @@
 ﻿using FoodService.Interfeces;
 using FoodService.Models;
+using FoodService.Repository;
 using FoodService.Services;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace FoodService.ViewModels
 
         public ObservableCollection<ConceptoModel> Conceptos { get; set; }
         public string TipoNovedad { get; set; }
+        public ConceptoModel SeletedConcepto { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
         public NovedadModel Novedad { get; set; }
@@ -37,19 +39,48 @@ namespace FoodService.ViewModels
             Empleados = new ObservableCollection<EmpleadoModel>();
             Conceptos = new ObservableCollection<ConceptoModel>();
             TipoNovedad = tipoNovedad;
+            SeletedConcepto = new ConceptoModel(0,"","");
             FechaInicio = DateTime.Now;
             FechaFinal = DateTime.Now;
             Novedad = new NovedadModel();
             ListarEmpleados(empleados);
             ListarConceptos();
         }
-        private void GuardarNovedad()
+        async private void GuardarNovedad()
         {
+            FoodServiceRepository foodServiceRepository = new FoodServiceRepository();
             DateTime f1 = FechaInicio;
             DateTime f2 = FechaFinal;
             while (f1 <= f2)
             {
-
+                foreach(var empleado in Empleados)
+                {
+                    NovedadModel novedad = new NovedadModel();
+                    novedad.idPlato = 0;
+                    novedad.idTurnoDetalle = 0;
+                    novedad.Fecha = f1;
+                    novedad.IdEmpleado = empleado.Id;
+                    novedad.Detalle = SeletedConcepto.Descripcion;
+                    novedad.Notas = Novedad.Notas;
+                    novedad.FechaIng = DateTime.Now;
+                    novedad.UsuarioIng = VariablesGlobales.USER.UserName;
+                    if (TipoNovedad == "Cancel")
+                    {
+                        novedad.NoAlimentacion = true;
+                    }
+                    if (TipoNovedad == "New")
+                    {
+                        novedad.NoAlimentacion = false;
+                    }
+                    if (TipoNovedad == "Change")
+                    {
+                        novedad.NoAlimentacion = true;
+                        novedad.idPlato = Novedad.idPlato;
+                        novedad.idTurnoDetalle = Novedad.idTurnoDetalle;
+                    }
+                    await foodServiceRepository.AddNovedad(novedad);
+                }
+                
                 f1 = f1.Date.AddDays(1);
             }
             var navigationService = new NavigationService();

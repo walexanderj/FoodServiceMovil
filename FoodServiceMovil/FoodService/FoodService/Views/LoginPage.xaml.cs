@@ -1,5 +1,6 @@
 ﻿using FoodService.Models;
 using FoodService.Repository;
+using FoodService.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace FoodService.Views
             var usuario = (UsuarioModel)await new FoodServiceRepository().GetUsuario(login);
             if (usuario != null)
             {
+                VariablesGlobales.USER = usuario;
                 App.Current.MainPage = new NavigationPage(new HomePage());
             }
             else
