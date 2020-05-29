@@ -11,13 +11,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-
-            <Grid BackgroundColor="{d:StaticResource gris_color_oscuro}" Grid.Row="0"  />
+            <Image Source="login_background.jpg" Aspect="AspectFill" Grid.Row="0" Grid.RowSpan="2"></Image>
 
             <!--Contenido, logo y formulario de ingreso-->
             <Grid Grid.RowSpan="2" Margin="50,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
@@ -28,24 +27,19 @@
                          HeightRequest="150" 
                          HorizontalOptions="Center" 
                          VerticalOptions="Center">
-                    <BoxView BackgroundColor="Gray" 
-                         VerticalOptions="Fill"
-                         WidthRequest="150"
-                         CornerRadius="75"
-                         HeightRequest="150">
-                    </BoxView>
+
                     <Image Grid.Column="0" 
-                       Source="FB_IMG_15381330065636778.jpg"
+                       Source="foodservice_logo.png"
                        HorizontalOptions="Center"
                        WidthRequest="70"/>
                 </StackLayout>
                 <!--Formulario de ingreso-->
                 <Grid Grid.Row="1" RowSpacing="0">
-                    <Frame HasShadow="True" CornerRadius="10">
+                    <Frame HasShadow="True" CornerRadius="5">
                         <StackLayout Spacing="20">
                             <Label Text="LOGIN" HorizontalOptions="Center"/>
-                            <Entry x:Name="txt_email" Placeholder="Email" Keyboard="Email"/>
-                            <Entry x:Name="txt_password" Placeholder="Password" IsPassword="True"/>
+                            <Entry x:Name="txt_email" Placeholder="Usuario" Keyboard="Email"/>
+                            <Entry x:Name="txt_password" Placeholder="Contraseña" IsPassword="True"/>
 
                             <Button x:Name="btn_login" 
                                 Clicked="btn_login_Clicked"
@@ -55,10 +49,7 @@
                         </StackLayout>
                     </Frame>
                 </Grid>
-                <Grid Grid.Row="2" />
-
             </Grid>
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

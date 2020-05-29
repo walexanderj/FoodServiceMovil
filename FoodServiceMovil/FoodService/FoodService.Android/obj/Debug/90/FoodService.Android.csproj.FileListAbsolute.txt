@@ -485,3 +485,10 @@ D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodServic
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewCellRenderer_ViewCellContainer_TapGestureListener.java
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ClipboardChangeListener.java
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\WebAuthenticatorCallbackActivity.java
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable\restaurante.jpg
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable\login_background.jpg
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable-hdpi\foodservice_logo.png
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable-mdpi\foodservice_logo.png
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable-xhdpi\foodservice_logo.png
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable-xxhdpi\foodservice_logo.png
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService.Android\obj\Debug\90\res\drawable-xxxhdpi\foodservice_logo.png

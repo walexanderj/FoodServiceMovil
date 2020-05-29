@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodService.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace FoodService.Views
         public FoodServiceHomePage()
         {
             InitializeComponent();
+            BindingContext = new FoodServiceHomePageViewModel();
         }
     }
 }

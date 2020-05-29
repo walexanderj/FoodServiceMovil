@@ -37,7 +37,11 @@ namespace FoodService.ViewModels
             var empleados = new  ObservableCollection<EmpleadoModel>(Item.Empleados);
             foreach (var itemEmpleado in empleados)
             {
-                Empleados.Add(itemEmpleado);
+                if (itemEmpleado.Activo == true)
+                {
+                    Empleados.Add(itemEmpleado);
+                }
+                
             }
             IsRefreshing = false;
         }

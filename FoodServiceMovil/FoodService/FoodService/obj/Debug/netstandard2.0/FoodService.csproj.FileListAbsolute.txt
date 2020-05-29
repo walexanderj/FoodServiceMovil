@@ -2,7 +2,6 @@ D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodServic
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\bin\Debug\netstandard2.0\FoodService.dll
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\bin\Debug\netstandard2.0\ref\FoodService.dll
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\bin\Debug\netstandard2.0\FoodService.pdb
-D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.csprojAssemblyReference.cache
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.AssemblyInfoInputs.cache
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.AssemblyInfo.cs
@@ -17,3 +16,4 @@ D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodServic
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\AreasPage.xaml.g.cs
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\AreaDetallePage.xaml.g.cs
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\NovedadPage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.csprojAssemblyReference.cache

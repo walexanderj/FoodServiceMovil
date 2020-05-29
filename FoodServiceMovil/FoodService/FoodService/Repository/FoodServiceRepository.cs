@@ -1,5 +1,6 @@
 ﻿using FoodService.Interfeces;
 using FoodService.Models;
+using FoodService.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -86,6 +87,26 @@ namespace FoodService.Repository
                 }
             }
             return false;
+        }
+
+        async public Task<List<ProgramaDiaModel>> GetProgramaDia(DateTime fecha)
+        {
+            var deviceService = DependencyService.Get<IDeviceService>();
+            if (deviceService.CheckConnectivity())
+            {
+                using (var client = new HttpClient())
+                {
+                    //var json = JsonConvert.SerializeObject(fecha.ToString("yyyyMMdd"));
+                    //var contentSend = new StringContent(json, Encoding.UTF8, "application/json");
+                    var response = await client.GetAsync(new Uri(Url + "ProgramaDia/" + fecha.ToString("yyyyMMdd")));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<List<ProgramaDiaModel>>(content);
+                    }
+                }
+            }
+            return null;
         }
     }
 }

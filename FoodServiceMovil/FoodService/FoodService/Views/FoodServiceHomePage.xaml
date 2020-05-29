@@ -4,12 +4,65 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="FoodService"
              x:Class="FoodService.Views.FoodServiceHomePage">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="About" Priority="0" Order="Primary" Clicked="AboutClicked"/>-->
+        <ToolbarItem x:Name="mn_new_service" Text="Enviar programa dia" Priority="0" Order="Secondary" />
+        <ToolbarItem  x:Name="mn_cancel_service" Text="Enviar Programa Periodo" Priority="1" Order="Secondary" />
+        <ToolbarItem  x:Name="mn_change_service" Text="Generar Tickets" Priority="2" Order="Secondary" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Image Source="restaurante.jpg" Aspect="AspectFill"></Image>
+            </Grid>
+            
+            <StackLayout Grid.Row="1">
+
+                <DatePicker Date="{Binding Fecha}"/>
+                <Label Text="Programación" />
+                <ListView x:Name="grd_Empleados" 
+                  IsRefreshing="{Binding IsRefreshing}"
+                  ItemsSource="{Binding Programa}" 
+                  HasUnevenRows="True" 
+                  CachingStrategy="RetainElement" 
+                  SeparatorVisibility="None">
+                    <!--ItemSelected="grd_Areas_ItemSelected">-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                                    <Frame HasShadow="true" Margin="0" BorderColor="LightGray" CornerRadius="0" Padding="5">
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
+                                            <StackLayout Orientation="Vertical">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding Fecha}" FontSize="Subtitle" />
+                                                    <Label Text="{Binding Dia}" FontSize="Subtitle" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Servicio: " />
+                                                    <Label Text="{Binding Plato}" />
+                                                    <Label Text=", " />
+                                                    <Label Text="{Binding Cantidad}" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
