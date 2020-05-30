@@ -22,7 +22,7 @@ namespace FoodService.Models
         public string Telefono { get; set; }
         public List<ProgramacionModel> Programacion { get; set; }
         public List<NovedadModel> Novedades { get; set; }
-
+        public String Area { get; set; }
         public bool IsChecked { get; set; }
     }
 }

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodService.Views.EmpleadosPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" BackgroundColor="Black">
+                <Entry Text="" Placeholder="Busqueda..." BackgroundColor="Black" TextColor="White" PlaceholderColor="White"/>
+            </StackLayout>
+            <ListView x:Name="grd_Empleados" 
+                      Grid.Row="1"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  ItemsSource="{Binding Empleados}" 
+                  HasUnevenRows="True" 
+                  CachingStrategy="RetainElement" 
+                  SeparatorVisibility="None"
+                  ItemSelected="grd_Empleados_ItemSelected">
+                <!--<ListView.Behaviors>
+                <d:EventToCommandBehavior EventName="ItemTapped" 
+                                          Command="{Binding ItemTappedCommand}" 
+                                          EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
+            </ListView.Behaviors>-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                                <Frame HasShadow="False" Margin="0" BorderColor="LightGray" CornerRadius="0" >
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
+
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Nombre}" FontSize="Subtitle" />
+                                            <Label Text="{Binding TipoContrato}" FontSize="Micro" TextColor="Gray"/>
+                                            <Label Text="{Binding Telefono}" FontSize="Small"/>
+                                            <Label Text="{Binding Area}" FontSize="Small"/>
+                                            <!--<Image Source="{Binding Calificacion,Converter={StaticResource CalificationToImage}}" />-->
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

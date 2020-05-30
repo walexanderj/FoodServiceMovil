@@ -70,6 +70,24 @@ namespace FoodService.Repository
             }
             return null;
         }
+
+        async public Task<List<EmpleadoModel>> GetEmpleados()
+        {
+            var deviceService = DependencyService.Get<IDeviceService>();
+            if (deviceService.CheckConnectivity())
+            {
+                using (var client = new HttpClient())
+                {
+                    var response = await client.GetAsync(new Uri(Url + "Empleado"));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<List<EmpleadoModel>>(content);
+                    }
+                }
+            }
+            return null;
+        }
         async public Task<bool> AddNovedad(NovedadModel item)
         {
             var deviceService = DependencyService.Get<IDeviceService>();

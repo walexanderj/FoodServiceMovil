@@ -18,13 +18,16 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="3*" />
+                <RowDefinition Height="4*" />
             </Grid.RowDefinitions>
-
-            <Label Text="{Binding Item.Descripcion}"
+            <Grid Grid.Column="0" BackgroundColor="Black">
+                <Label Text="{Binding Item.Descripcion}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-               Grid.Row="0"/>
+                FontSize="Subtitle"
+                TextColor="YellowGreen"/>
+            </Grid>
+
             <Grid Grid.Row="1" BackgroundColor="White">
                 <ListView x:Name="grd_Empleados" 
                   IsRefreshing="{Binding IsRefreshing}"
@@ -36,8 +39,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid BackgroundColor="{StaticResource gris_color_claro}">
-                                    <Frame HasShadow="true" Margin="0" BorderColor="LightGray" CornerRadius="0" >
+                                <Grid BackgroundColor="White">
+                                    <Frame HasShadow="true" Margin="0" Padding="4" BorderColor="LightGray" CornerRadius="0" >
                                         <StackLayout Orientation="Horizontal">
 
                                             <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
