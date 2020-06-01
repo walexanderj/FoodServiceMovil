@@ -18,6 +18,8 @@ namespace FoodService.Views
         {
             InitializeComponent();
             BindingContext = novedadViewModel;
+            lb_turnos.IsVisible = false;
+            if (lbl_TipoNovedad.Text == "Change") { lb_turnos.IsVisible = true; }
         }
 
 

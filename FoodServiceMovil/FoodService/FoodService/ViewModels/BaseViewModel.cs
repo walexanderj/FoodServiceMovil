@@ -9,6 +9,7 @@ namespace FoodService.ViewModels
     public class BaseViewModel : System.ComponentModel.INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName]string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -16,5 +17,6 @@ namespace FoodService.ViewModels
                 return;
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

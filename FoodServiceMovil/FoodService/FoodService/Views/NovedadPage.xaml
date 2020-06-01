@@ -8,10 +8,11 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
             <StackLayout Grid.Column="0" Margin="5">
+                <Label  x:Name="lbl_TipoNovedad" Text="{Binding TipoNovedad}" IsVisible="False"/>
                 <Label Text="Inicio"/>
                 <DatePicker Date="{Binding FechaInicio}" />
                 <Label Text="Finaliza"/>
@@ -20,6 +21,11 @@
                 <Picker Title="Concepto" 
                         ItemsSource="{Binding Conceptos}" 
                         SelectedItem="{Binding SeletedConcepto, Mode=TwoWay}"
+                        ItemDisplayBinding="{Binding Descripcion}"/>
+                <Picker x:Name="lb_turnos"
+                        Title="Turnos" 
+                        ItemsSource="{Binding Turnos}" 
+                        SelectedItem="{Binding SelectedTurno, Mode=TwoWay}"
                         ItemDisplayBinding="{Binding Descripcion}"/>
                 <!--<Label Text="{Binding SelectedJob.JobsId}" IsVisible="True" x:Name="TxtId" Margin="0,100,0,0"/>-->
                 <Label Text="Notas"/>

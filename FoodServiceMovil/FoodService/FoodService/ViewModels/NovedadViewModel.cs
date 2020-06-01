@@ -17,8 +17,11 @@ namespace FoodService.ViewModels
         public ObservableCollection<EmpleadoModel> Empleados { get; set; }
 
         public ObservableCollection<ConceptoModel> Conceptos { get; set; }
+
+        public ObservableCollection<TurnoModel> Turnos { get; set; }
         public string TipoNovedad { get; set; }
         public ConceptoModel SeletedConcepto { get; set; }
+        public TurnoModel SelectedTurno { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
         public NovedadModel Novedad { get; set; }
@@ -38,13 +41,16 @@ namespace FoodService.ViewModels
             GuardarNovedadCommand = new Command(GuardarNovedad);
             Empleados = new ObservableCollection<EmpleadoModel>();
             Conceptos = new ObservableCollection<ConceptoModel>();
+            Turnos = new ObservableCollection<TurnoModel>();
             TipoNovedad = tipoNovedad;
             SeletedConcepto = new ConceptoModel(0,"","");
+            SelectedTurno = new TurnoModel();
             FechaInicio = DateTime.Now;
             FechaFinal = DateTime.Now;
             Novedad = new NovedadModel();
             ListarEmpleados(empleados);
             ListarConceptos();
+            ListarTurnos();
         }
         async private void GuardarNovedad()
         {
@@ -74,9 +80,9 @@ namespace FoodService.ViewModels
                     }
                     if (TipoNovedad == "Change")
                     {
-                        novedad.NoAlimentacion = true;
-                        novedad.idPlato = Novedad.idPlato;
-                        novedad.idTurnoDetalle = Novedad.idTurnoDetalle;
+                        novedad.NoAlimentacion = false;
+                        novedad.idPlato = SelectedTurno.IdPlato;
+                        novedad.idTurnoDetalle = SelectedTurno.Id;
                     }
                     await foodServiceRepository.AddNovedad(novedad);
                 }
@@ -105,6 +111,15 @@ namespace FoodService.ViewModels
                 Empleados.Add(itemEmpleado);
             }
             IsRefreshing = false;
+        }
+
+        async private void ListarTurnos()
+        {
+
+            foreach (var item in await new FoodServiceRepository().GetTurnos())
+            {
+                Turnos.Add(item);
+            }
         }
     }
 }
