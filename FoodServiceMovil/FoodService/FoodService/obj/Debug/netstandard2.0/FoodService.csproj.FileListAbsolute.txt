@@ -18,3 +18,4 @@ D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodServic
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\NovedadPage.xaml.g.cs
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\FoodService.csprojAssemblyReference.cache
 D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\EmpleadosPage.xaml.g.cs
+D:\Griffith\Desarrollos\FoodServiceMovil\FoodServiceMovil\FoodService\FoodService\obj\Debug\netstandard2.0\Views\ProgramacionEmpleadoPage.xaml.g.cs

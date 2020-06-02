@@ -42,9 +42,11 @@ namespace FoodService.Views
         //    }
         //}
 
-        private void grd_Empleados_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async private void grd_Empleados_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var selectedItem = e.SelectedItem as EmpleadoModel;
 
+            await Navigation.PushAsync(new ProgramacionEmpleadoPage(new ProgramacionEmpleadoPageViewModel(selectedItem)));
         }
 
         private void mn_home_Clicked(object sender, EventArgs e)

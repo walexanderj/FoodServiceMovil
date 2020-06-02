@@ -34,6 +34,23 @@ namespace FoodService.Repository
             return null;
         }
 
+        async public Task<IEnumerable<ProgramacionModel>> GetProgramacion()
+        {
+            var deviceService = DependencyService.Get<IDeviceService>();
+            if (deviceService.CheckConnectivity())
+            {
+                using (var client = new HttpClient())
+                {
+                    var response = await client.GetAsync(new Uri(Url + "Programacion"));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<List<ProgramacionModel>>(content);
+                    }
+                }
+            }
+            return null;
+        }
 
         async public Task<List<AreaModel>> GetAreas()
         {

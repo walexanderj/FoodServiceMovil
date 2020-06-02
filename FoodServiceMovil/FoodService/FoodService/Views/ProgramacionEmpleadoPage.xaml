@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FoodService.Views.ProgramacionEmpleadoPage">
+    <ContentPage.Content>
+        <Grid>
+            <!--<Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>-->
+            <StackLayout>
+                <!--<StackLayout BackgroundColor="Black">
+                    <Entry Text="{Binding ValorBuscar}" Placeholder="Busqueda..." BackgroundColor="Black" TextColor="White" PlaceholderColor="White" />
+                    <Button x:Name="btn_buscar" Command="{Binding BuscarCommand}" WidthRequest="120" Text="Filtrar" HorizontalOptions="Center"/>
+                </StackLayout>-->
+
+                <ListView x:Name="grd_Empleados" 
+                  RefreshCommand="{Binding VerProgramacionCommand}"
+                  IsRefreshing="{Binding IsRefreshing}"
+                  ItemsSource="{Binding Programacion}" 
+                  HasUnevenRows="True" 
+                  CachingStrategy="RetainElement" 
+                  SeparatorVisibility="None"
+                  ItemSelected="grd_Empleados_ItemSelected">
+                    <!--<ListView.Behaviors>
+                <d:EventToCommandBehavior EventName="ItemTapped" 
+                                          Command="{Binding ItemTappedCommand}" 
+                                          EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
+            </ListView.Behaviors>-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid BackgroundColor="{StaticResource gris_color_claro}">
+                                    <Frame HasShadow="False" Margin="0" BorderColor="LightGray" CornerRadius="0" Padding="4">
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
+
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Fecha,StringFormat='{0:dd/MM/yyyy}'}"  FontSize="Subtitle" />
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Turno: " FontSize="Small"/>
+                                                    <Label Text="{Binding Turno}" FontSize="Small" TextColor="Gray"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Servicio: " FontSize="Small"/>
+                                                    <Label Text="{Binding Plato}" FontSize="Small"/>
+                                                    <Label Text="(" FontSize="Small"/>
+                                                    <Label Text="{Binding Cantidad}" FontSize="Small"/>
+                                                    <Label Text=")" FontSize="Small"/>
+                                                </StackLayout>
+                                                
+                                                <!--<Image Source="{Binding Calificacion,Converter={StaticResource CalificationToImage}}" />-->
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

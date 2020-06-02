@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>-->
             <StackLayout>
                 <StackLayout BackgroundColor="Black">
-                    <Entry Text="{Binding ValorBuscar}}" Placeholder="Busqueda..." BackgroundColor="Black" TextColor="White" PlaceholderColor="White" />
+                    <Entry Text="{Binding ValorBuscar}" Placeholder="Busqueda..." BackgroundColor="Black" TextColor="White" PlaceholderColor="White" />
                     <Button x:Name="btn_buscar" Command="{Binding BuscarCommand}" WidthRequest="120" Text="Filtrar" HorizontalOptions="Center"/>
                 </StackLayout>
 
@@ -41,17 +41,33 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid BackgroundColor="{StaticResource gris_color_claro}">
-                                <Frame HasShadow="False" Margin="0" BorderColor="LightGray" CornerRadius="0" >
+                                <Frame HasShadow="False" Margin="0" BorderColor="LightGray" CornerRadius="0" Padding="2" >
                                     <StackLayout Orientation="Horizontal">
 
                                         <!--<Image Source="{Binding Imagen}" HeightRequest="100" WidthRequest="130" Aspect="AspectFill"/>-->
 
                                         <StackLayout Orientation="Vertical">
-                                                <CheckBox  IsChecked="{Binding IsChecked}"/>
-                                                <Label Text="{Binding Nombre}" FontSize="Subtitle" />
-                                            <Label Text="{Binding TipoContrato}" FontSize="Micro" TextColor="Gray"/>
-                                            <Label Text="{Binding Telefono}" FontSize="Small"/>
-                                            <Label Text="{Binding Area}" FontSize="Small"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <CheckBox  IsChecked="{Binding IsChecked}"/>
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Label Text="{Binding Nombre}" FontSize="Subtitle" />
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="Contrato: " FontSize="Micro"/>
+                                                            <Label Text="{Binding TipoContrato}" FontSize="Micro" TextColor="Gray"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="Teléfono: " FontSize="Small"/>
+                                                            <Label Text="{Binding Telefono}" FontSize="Small"/>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label Text="Area: " FontSize="Small"/>
+                                                            <Label Text="{Binding Area}" FontSize="Small"/>
+                                                        </StackLayout>
+                                                            
+                                                    </StackLayout>
+                                                </StackLayout>
+                                                
+
                                             <!--<Image Source="{Binding Calificacion,Converter={StaticResource CalificationToImage}}" />-->
                                         </StackLayout>
                                     </StackLayout>
